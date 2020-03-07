@@ -1,3 +1,5 @@
 class User < ApplicationRecord
-	belongs_to :accountable, :polymorphic => true
+	has_secure_password
+
+	belongs_to :accountable, polymorphic: true
 end
