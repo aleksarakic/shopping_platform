@@ -9,17 +9,17 @@ RSpec.describe "Sessions", type: :request do
     end
   end
 
-  describe "GET /create" do
+  describe "GET /log_in" do
     it "returns http success" do
-      get "/sessions/create"
+      get "/log_in"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /destroy" do
-    it "returns http success" do
-      get "/sessions/destroy"
-      expect(response).to have_http_status(:success)
+  describe "GET /log_out" do
+    it "gets redirected after log out" do
+      get "/log_out"
+      expect(response).to have_http_status(302)
     end
   end
 
