@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
   	if current_user
-      redirect_to user_path(current_user)
+      redirect_to home_path(current_user)
       return
     end
   end
@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
   def create
   	@user = User.where(email: params[:email]).first
 		if @user && @user.authenticate(params[:password])
-				session[:user_id] = @user.id
-				redirect_to user_path(current_user)
+			session[:user_id] = @user.id
+			redirect_to home_path(current_user)
 		else
 			redirect_to log_in_path
 		end
