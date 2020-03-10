@@ -19,6 +19,10 @@ class BuyersController < ApplicationController
 		end
 	end
 
+	def show
+		authorize @buyer
+	end
+
 	private
 	def buyer_params
 		params.require(:buyer).permit(:name, :type, :description, :address)
