@@ -18,10 +18,12 @@ class SuppliersController < ApplicationController
 
 	def new
 		@supplier = Supplier.new
+		authorize @supplier
 	end
 
 	def create
 		@supplier = Supplier.create(supplier_params)
+		authorize @supplier
 		if @supplier
 			redirect_to log_in_path
 		else
@@ -30,7 +32,7 @@ class SuppliersController < ApplicationController
 	end
 
   def show
-  	@supplier = Supplier.find(current_user.accountable_id)
+  	@supplier = Supplier.find(params[:id])
   	authorize @supplier
   end
 

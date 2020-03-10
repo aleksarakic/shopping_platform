@@ -6,10 +6,12 @@ class BuyersController < ApplicationController
 
 	def new
 		@buyer = Buyer.new
+		authorize @buyer
 	end
 
 	def create
 		@buyer = Buyer.create(buyer_params)
+		authorize @buyer
 		if @buyer
 			redirect_to log_in_path
 		else
