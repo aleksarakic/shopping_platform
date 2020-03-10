@@ -1,2 +1,10 @@
-<h1>Suppliers#new</h1>
-<p>Find me in app/views/suppliers/new.html.erb</p>
+<% @page_title = "New Supplier" %>
+  <h1>New Supplier</h1>
+  <%= form_for(:supplier, :url => {:controller => 'suppliers', :action => 'create'}) do |f| %>
+      <p> Name:</br> <%= f.text_field :name %> </p>
+      <p> Type:</br> <%= f.text_field :type %> </p>
+      <p> Description:</br> <%= f.text_field :description %> </p>
+      <p> Address:</br> <%= f.text_field :address %> </p>
+
+      <%= f.submit :create %>
+  <% end %>

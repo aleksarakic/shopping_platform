@@ -1,6 +1,3 @@
-<% @supplier.products.each do |product| %>
-  <p><%= product.id %><p>
-<% end %>
-
-
+<p><%= @supplier.name %></p>
+<%= link_to 'Shop', suppliers_shop_path(@supplier) %>
 <%= link_to 'Sign out', log_out_path %>

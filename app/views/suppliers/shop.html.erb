@@ -1,0 +1,13 @@
+<p>Sort by: 
+	<%= link_to "Name", suppliers_shop_path(search_param: 'name') %>
+	<%= link_to "Category", suppliers_shop_path(search_param: 'category') %>
+</p>
+
+<% @products.each do |product| %>
+  <div>
+  	<p><%= product.name %><p>
+  	<p><%= product.category %><p>
+  </div>
+<% end %>
+
+<%= link_to 'Sign out', log_out_path %>

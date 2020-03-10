@@ -1,2 +1,6 @@
-<h1>Buyers#show</h1>
-<p>Find me in app/views/buyers/show.html.erb</p>
+<% @suppliers.each do |supplier| %>
+  <p><%= supplier.name %><p>
+<% end %>
+
+
+<%= link_to 'Sign out', log_out_path %>
