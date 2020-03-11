@@ -1,17 +1,20 @@
-<p>Sort by: 
-	<%= link_to "Name", suppliers_shop_path(search_param: 'name') %>
-	<%= link_to "Category", suppliers_shop_path(search_param: 'category') %>
+<div class="container">
+  <p>Sort by: 
+  <%= link_to "Name", suppliers_shop_path(search_param: 'name'), :class => "btn btn-secondary btn-sm" %>
+  <%= link_to "Category", suppliers_shop_path(search_param: 'category'), :class => "btn btn-secondary btn-sm"%>
 </p>
 
 <% @products.each do |product| %>
-  <div>
-  	<p><%= product.name %><p>
-  	<p><%= product.category %><p>
-  	<p><%= product.quantity %><p>
-  	<% if @current_user.present? && @current_user.accountable_type == 'Buyer' %>
-  		<%= button_to "Add #{product.name} to cart", line_items_path(:product_id => product.id) %>
-  	<% end %>
+  <div class='card'>
+    <div class='card-body'>
+      <p>Name: <%= product.name %><p>
+     <p>Category: <%= product.category %><p>
+     <p>Quantity: <%= product.quantity %><p>
+    <% if @current_user.present? && @current_user.accountable_type == 'Buyer' %>
+      <%= button_to "Add #{product.name} to cart", line_items_path(:product_id => product.id)%>
+    <% end %>
+
+    </div>
   </div>
 <% end %>
-
-<%= link_to 'Sign out', log_out_path %>
+</div>

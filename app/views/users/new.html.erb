@@ -1,14 +1,18 @@
-<% @page_title = "Signup" %>
-<div class="Sign_Form">
-  <h1>Sign Up</h1>
-  <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
-      <p> Email:</br> <%= f.text_field :email %> </p>
-      <p> Password:</br> <%= f.password_field :password %> </p>
-      <p> First name:</br> <%= f.text_field :first_name %> </p>
-      <p> Last name:</br> <%= f.text_field :last_name %> </p>
-      <p> Accountable type:</br> <%= f.text_field :accountable_type %> </p>
-      <p> Accountable id:</br> <%= f.number_field :accountable_id %> </p>
-      <%= f.submit :Signup %>
-  <% end %>
+<div class="text-center">
+  <div>
+    <% @page_title = "Signup" %>
+    <div class="Sign_Form">
+      <h1>Sign Up</h1>
+      <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
+          <p> Email:</br> <%= f.text_field :email %> </p>
+          <p> Password:</br> <%= f.password_field :password %> </p>
+          <p> First name:</br> <%= f.text_field :first_name %> </p>
+          <p> Last name:</br> <%= f.text_field :last_name %> </p>
+          <p> Accountable type:</br> <%= f.text_field :accountable_type %> </p>
+          <p> Accountable id:</br> <%= f.number_field :accountable_id %> </p>
+          <%= f.submit :Signup %>
+      <% end %>
+    </div>
+    <%= link_to 'Already a member?', log_in_path %>
+  </div>
 </div>
-<%= link_to 'Already a member?', log_in_path %>

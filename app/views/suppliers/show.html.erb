@@ -1,3 +1,9 @@
-<p><%= @supplier.name %></p>
-<%= link_to 'Shop', suppliers_shop_path(@supplier) %>
-<%= link_to 'Sign out', log_out_path %>
+<div class="container">
+	<div class="text-center">
+	<h2><%= @supplier.name %></h2>
+	<p>type: <%= @supplier.type %></p>
+	<p>description: <%= @supplier.description %></p>
+	<p>address: <%= @supplier.address %></p>
+	<%= link_to 'Shop', suppliers_shop_path(@supplier) , :class => "btn btn-primary btn-sm" %>
+	</div>
+</div>

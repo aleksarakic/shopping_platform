@@ -1,11 +1,12 @@
-<%= form_tag home_path, method: 'get' do %>
-	<%= label_tag(:search, 'Search suppliers') %>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag("Search", name: nil) %>
-<% end %>
-
-<% @suppliers.each do |supplier| %>
-  <p><%= link_to supplier.name, supplier_path(supplier) %><p>
-<% end %>
-
-<%= link_to 'Sign out', log_out_path %>
+		<%= form_tag home_path, method: 'get' do %>
+			<%= label_tag(:search, 'Search suppliers') %>
+			<%= text_field_tag :search, params[:search] %>
+			<%= submit_tag("Search", name: nil) %>
+		<% end %>
+ <div class='card'>
+ 	 <div class='card-body'>
+		<% @suppliers.each do |supplier| %>
+		  <p><%= link_to supplier.name, supplier_path(supplier) %><p>
+		<% end %>
+ 	 </div>
+ <div>

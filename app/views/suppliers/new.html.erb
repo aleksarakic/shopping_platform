@@ -1,3 +1,5 @@
+<div class="text-center">
+
 <% @page_title = "New Supplier" %>
   <h1>New Supplier</h1>
   <%= form_for(:supplier, :url => {:controller => 'suppliers', :action => 'create'}) do |f| %>
@@ -8,3 +10,4 @@
 
       <%= f.submit :create %>
   <% end %>
+ </div>
