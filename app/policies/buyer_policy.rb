@@ -1,9 +1,9 @@
 class BuyerPolicy
-  attr_reader :user, :post
+  attr_reader :user, :buyer
 
-  def initialize(user, post)
+  def initialize(user, buyer)
     @user = user
-    @post = post
+    @buyer = buyer
   end
 
   def show?

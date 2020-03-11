@@ -1,9 +1,9 @@
 class CartPolicy
-  attr_reader :user, :supplier
+  attr_reader :user, :cart
 
-  def initialize(user, supplier)
+  def initialize(user, cart)
     @user = user
-    @supplier = supplier
+    @cart = cart
   end
 
   def show?

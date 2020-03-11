@@ -1,9 +1,9 @@
-class SupplierPolicy
-  attr_reader :user, :supplier
+class OrderPolicy
+  attr_reader :user, :order
 
-  def initialize(user, supplier)
+  def initialize(user, order)
     @user = user
-    @supplier = supplier
+    @order = order
   end
 
   def index?
@@ -15,7 +15,7 @@ class SupplierPolicy
   end
 
   def new?
-    user.accountable_type == 'Buyer'
+    user.accountable_type == 'Buyer' 
   end
 
   def create?
