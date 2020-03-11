@@ -31,6 +31,7 @@ class OrdersController < ApplicationController
 	  @order.save
 	  Cart.destroy(session[:cart_id])
 	  session[:cart_id] = nil
+    flash.alert = 'Successful order.'
 	  redirect_to root_path
 	end
 
