@@ -9,4 +9,5 @@
 #### Setting up the database
 4. run `rake db:create` to build database
 5. run `rake db:migrate` to run the migrations
-6. run `RAILS_ENV=test rake db:seed` to populate test database
+6. run `rake db:seed` to populate db
+7. run `RAILS_ENV=test rake db:seed` to populate test database
