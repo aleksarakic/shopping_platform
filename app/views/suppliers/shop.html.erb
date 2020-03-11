@@ -7,6 +7,10 @@
   <div>
   	<p><%= product.name %><p>
   	<p><%= product.category %><p>
+  	<p><%= product.quantity %><p>
+  	<% if @current_user.present? && @current_user.accountable_type == 'Buyer' %>
+  		<%= button_to "Add #{product.name} to cart", line_items_path(:product_id => product.id) %>
+  	<% end %>
   </div>
 <% end %>
 
